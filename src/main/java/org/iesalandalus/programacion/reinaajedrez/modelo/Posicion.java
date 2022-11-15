@@ -9,7 +9,7 @@ public class Posicion {
 
 	public Posicion(Posicion posicion) {
 		if (posicion == null) {
-			throw new NullPointerException("No se puede copiar una posición nula");
+			throw new NullPointerException("ERROR: No es posible copiar una posición nula.");
 		}
 		this.fila = posicion.getFila();
 		this.columna = posicion.getColumna();
@@ -17,9 +17,9 @@ public class Posicion {
 
 	private void setFila(int fila) {
 		if (fila < 1) {
-			throw new IllegalArgumentException("El valor de la posición de la fila es menor que el mínimo permitido.");
+			throw new IllegalArgumentException("ERROR: Fila no válida.");
 		} else if (fila > 8) {
-			throw new IllegalArgumentException("El valor de la posición de la fila es mayor que el máximo permitido.");
+			throw new IllegalArgumentException("ERROR: Fila no válida.");
 		}
 		this.fila = fila;
 	}
@@ -30,11 +30,9 @@ public class Posicion {
 
 	private void setColumna(char columna) {
 		if (columna < 'a') {
-			throw new IllegalArgumentException(
-					"El valor de la posición de la columna es menor que el mínimo permitido.");
+			throw new IllegalArgumentException("ERROR: Columna no válida.");
 		} else if (columna > 'h') {
-			throw new IllegalArgumentException(
-					"El valor de la posición de la columna es mayor que el máximo permitido.");
+			throw new IllegalArgumentException("ERROR: Columna no válida.");
 		}
 		this.columna = columna;
 	}
