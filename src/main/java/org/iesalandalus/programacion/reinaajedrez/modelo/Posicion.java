@@ -52,4 +52,9 @@ public class Posicion {
 		return columna == other.columna && fila == other.fila;
 	}
 
+	@Override
+	public String toString() {
+		return String.format("fila=valorFila, columna=valorColumna", fila, columna);
+	}
+
 }
