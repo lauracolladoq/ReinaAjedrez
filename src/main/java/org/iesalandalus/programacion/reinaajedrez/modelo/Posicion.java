@@ -1,12 +1,7 @@
 package org.iesalandalus.programacion.reinaajedrez.modelo;
 
 public class Posicion {
-	private static final int min_fila = 1;
-	private static final int max_fila = 8;
-	private static final char min_columna = a;
-	private static final char max_columa = h;
-	
-	
+
 	private int fila;
 	private char columna;
 
@@ -15,6 +10,11 @@ public class Posicion {
 	}
 
 	private void setFila(int fila) {
+		if (fila < 1) {
+			throw new IllegalArgumentException("El valor de la posición de la fila es menor que el mínimo permitido.");
+		} else if (fila > 8) {
+			throw new IllegalArgumentException("El valor de la posición de la fila es mayor que el máximo permitido.");
+		}
 		this.fila = fila;
 	}
 
@@ -23,6 +23,13 @@ public class Posicion {
 	}
 
 	private void setColumna(char columna) {
+		if (fila < 'a') {
+			throw new IllegalArgumentException(
+					"El valor de la posición de la columna es menor que el mínimo permitido.");
+		} else if (fila > 'h') {
+			throw new IllegalArgumentException(
+					"El valor de la posición de la columna es mayor que el máximo permitido.");
+		}
 		this.columna = columna;
 	}
 
