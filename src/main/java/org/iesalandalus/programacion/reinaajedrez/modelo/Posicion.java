@@ -34,10 +34,16 @@ public class Posicion {
 	public char getColumna() {
 		return columna;
 	}
-	
-	public Posicion (int fila, char columna) {
-		this.fila = fila;
-		this.columna = columna;
+
+	public Posicion(int fila, char columna) {
+		setFila(fila);
+		setColumna(columna);
+	}
+
+	public Posicion(Posicion posicion) {
+		if (posicion == null) {
+			throw new NullPointerException("La posición no puede ser nula");
+		}
 	}
 
 	@Override
