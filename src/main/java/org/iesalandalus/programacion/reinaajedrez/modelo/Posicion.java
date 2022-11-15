@@ -7,6 +7,12 @@ public class Posicion {
 	private int fila;
 	private char columna;
 
+	public Posicion(Posicion posicion) {
+		if (posicion == null) {
+			throw new NullPointerException("La posición no puede ser nula");
+		}
+	}
+
 	private void setFila(int fila) {
 		if (fila < 1) {
 			throw new IllegalArgumentException("El valor de la posición de la fila es menor que el mínimo permitido.");
@@ -21,10 +27,10 @@ public class Posicion {
 	}
 
 	private void setColumna(char columna) {
-		if (fila < 'a') {
+		if (columna < 'a') {
 			throw new IllegalArgumentException(
 					"El valor de la posición de la columna es menor que el mínimo permitido.");
-		} else if (fila > 'h') {
+		} else if (columna > 'h') {
 			throw new IllegalArgumentException(
 					"El valor de la posición de la columna es mayor que el máximo permitido.");
 		}
@@ -38,12 +44,6 @@ public class Posicion {
 	public Posicion(int fila, char columna) {
 		setFila(fila);
 		setColumna(columna);
-	}
-
-	public Posicion(Posicion posicion) {
-		if (posicion == null) {
-			throw new NullPointerException("La posición no puede ser nula");
-		}
 	}
 
 	@Override
