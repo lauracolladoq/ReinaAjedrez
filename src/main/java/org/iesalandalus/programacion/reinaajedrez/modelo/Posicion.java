@@ -34,6 +34,11 @@ public class Posicion {
 	public char getColumna() {
 		return columna;
 	}
+	
+	public Posicion (int fila, char columna) {
+		this.fila = fila;
+		this.columna = columna;
+	}
 
 	@Override
 	public int hashCode() {
