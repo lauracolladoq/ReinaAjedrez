@@ -9,8 +9,10 @@ public class Posicion {
 
 	public Posicion(Posicion posicion) {
 		if (posicion == null) {
-			throw new NullPointerException("La posición no puede ser nula");
+			throw new NullPointerException("No se puede copiar una posición nula");
 		}
+		this.fila = posicion.getFila();
+		this.columna = posicion.getColumna();
 	}
 
 	private void setFila(int fila) {
