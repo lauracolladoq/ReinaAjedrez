@@ -48,25 +48,29 @@ public class Reina {
 				this.posicion = new Posicion(this.posicion.getFila() + pasos, this.posicion.getColumna());
 				break;
 			case NORESTE:
-				this.posicion = new Posicion(this.posicion.getFila() + pasos, (char) (this.posicion.getColumna() + pasos));
+				this.posicion = new Posicion(this.posicion.getFila() + pasos,
+						(char) (this.posicion.getColumna() + pasos));
 				break;
 			case ESTE:
 				this.posicion = new Posicion(this.posicion.getFila(), (char) (this.posicion.getColumna() + pasos));
 				break;
 			case SURESTE:
-				this.posicion = new Posicion(this.posicion.getFila() - pasos, (char) (this.posicion.getColumna() + pasos));
+				this.posicion = new Posicion(this.posicion.getFila() - pasos,
+						(char) (this.posicion.getColumna() + pasos));
 				break;
 			case SUR:
 				this.posicion = new Posicion(this.posicion.getFila() - pasos, this.posicion.getColumna());
 				break;
 			case SUROESTE:
-				this.posicion = new Posicion(this.posicion.getFila() - pasos, (char) (this.posicion.getColumna() + pasos));
+				this.posicion = new Posicion(this.posicion.getFila() - pasos,
+						(char) (this.posicion.getColumna() + pasos));
 				break;
 			case OESTE:
 				this.posicion = new Posicion(this.posicion.getFila(), (char) (this.posicion.getColumna() - pasos));
 				break;
 			case NOROESTE:
-				this.posicion = new Posicion(this.posicion.getFila() + pasos, (char) (this.posicion.getColumna() - pasos));
+				this.posicion = new Posicion(this.posicion.getFila() + pasos,
+						(char) (this.posicion.getColumna() - pasos));
 				break;
 
 			}
