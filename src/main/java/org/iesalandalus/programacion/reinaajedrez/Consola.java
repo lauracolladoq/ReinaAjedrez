@@ -82,4 +82,10 @@ public class Consola {
 		return null;
 	}
 
+	public static int elegirPasos() {
+		int numpasos;
+		System.out.println("Selecciona el número de pasos que avanzar");
+		numpasos = Entrada.entero();
+		return numpasos;
+	}
 }
