@@ -40,5 +40,17 @@ public class Consola {
 		}
 		return null;
 	}
-	
+
+	public static void mostrarMenuDirecciones() {
+		System.out.println("""
+				Pulsa 1 para desplazarte al norte
+				Pulsa 2 para desplazarte al noreste
+				Pulsa 3 para desplazarte al este
+				Pulsa 4 para desplazarte al sureste
+				Pulsa 5 para desplazarte al sur
+				Pulsa 6 para desplazarte al suroeste
+				Pulsa 7 para desplazarte al oeste
+				Pulsa 8 para desplazarte al noroeste
+						""");
+	}
 }
