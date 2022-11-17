@@ -30,7 +30,6 @@ public class Reina {
 
 	public Reina() {
 		setColor(Color.BLANCO);
-		//posicion = new Posicion(1, 'd');
 	}
 
 	public Reina(Color color) {
