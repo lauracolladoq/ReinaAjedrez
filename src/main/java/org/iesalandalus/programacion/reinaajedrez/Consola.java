@@ -88,4 +88,8 @@ public class Consola {
 		numpasos = Entrada.entero();
 		return numpasos;
 	}
+
+	public static void despedirse() {
+		System.out.println("Hasta luego <3");
+	}
 }
