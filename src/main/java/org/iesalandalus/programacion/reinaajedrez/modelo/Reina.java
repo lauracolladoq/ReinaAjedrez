@@ -18,4 +18,12 @@ public class Reina {
 		this.posicion = posicion;
 	}
 	
+	public Reina () {
+		color = Color.BLANCO;
+		posicion = new Posicion (1, 'd');
+	}
+
+
+	
+	
 }
