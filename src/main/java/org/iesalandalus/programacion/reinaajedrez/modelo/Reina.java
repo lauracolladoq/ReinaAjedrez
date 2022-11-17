@@ -25,5 +25,17 @@ public class Reina {
 		color = Color.BLANCO;
 		posicion = new Posicion(1, 'd');
 	}
+	
+	public Reina (Color color) {
+		this();
+		setColor(color);
+		if (color = Color.BLANCO) {
+			posicion = new Posicion(1, 'd');	
+		} else if (color = Color.NEGRO) {
+			posicion = new Posicion(8, 'd');
+		}
+		
+				
+	}
 
 }
