@@ -8,13 +8,13 @@ public class Reina {
 	public Color getColor() {
 		return color;
 	}
-	public void setColor(Color color) {
+	private void setColor(Color color) {
 		this.color = color;
 	}
 	public Posicion getPosicion() {
 		return posicion;
 	}
-	public void setPosicion(Posicion posicion) {
+	private void setPosicion(Posicion posicion) {
 		this.posicion = posicion;
 	}
 	
