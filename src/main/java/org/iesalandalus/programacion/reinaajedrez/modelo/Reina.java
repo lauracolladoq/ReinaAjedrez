@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.reinaajedrez.modelo;
 
+import javax.naming.OperationNotSupportedException;
+
 public class Reina {
 
 	private Color color;
@@ -10,6 +12,11 @@ public class Reina {
 	}
 
 	private void setColor(Color color) {
+		if (color == Color.BLANCO) {
+			posicion = new Posicion(1, 'd');
+		} else if (color == Color.NEGRO) {
+			posicion = new Posicion(8, 'd');
+		}
 		this.color = color;
 	}
 
@@ -22,27 +29,28 @@ public class Reina {
 	}
 
 	public Reina() {
-		color = Color.BLANCO;
-		posicion = new Posicion(1, 'd');
+		setColor(Color.BLANCO);
+		//posicion = new Posicion(1, 'd');
 	}
 
 	public Reina(Color color) {
-		this();
-		setColor(color);
-		if (color == Color.BLANCO) {
-			posicion = new Posicion(1, 'd');
-		} else if (color == Color.NEGRO) {
-			posicion = new Posicion(8, 'd');
+		if (color == null) {
+			throw new NullPointerException("ERROR: El color no puede ser nulo.");
+		}
+		else {
+			setColor(color);
+			
 		}
 	}
 
-	public void mover(Direccion direccion, int pasos) {
+	public void mover(Direccion direccion, int pasos) throws OperationNotSupportedException {
 		if (direccion == null) {
 			throw new NullPointerException("ERROR: La dirección no puede ser nula.");
 		}
 		if (pasos < 1 || pasos > 7) {
 			throw new IllegalArgumentException("ERROR: El número de pasos debe estar comprendido entre 1 y 7.");
-		} else {
+		}
+		try {
 			switch (direccion) {
 			case NORTE:
 				this.posicion = new Posicion(this.posicion.getFila() + pasos, this.posicion.getColumna());
@@ -63,7 +71,7 @@ public class Reina {
 				break;
 			case SUROESTE:
 				this.posicion = new Posicion(this.posicion.getFila() - pasos,
-						(char) (this.posicion.getColumna() + pasos));
+						(char) (this.posicion.getColumna() - pasos));
 				break;
 			case OESTE:
 				this.posicion = new Posicion(this.posicion.getFila(), (char) (this.posicion.getColumna() - pasos));
@@ -72,16 +80,18 @@ public class Reina {
 				this.posicion = new Posicion(this.posicion.getFila() + pasos,
 						(char) (this.posicion.getColumna() - pasos));
 				break;
-
 			}
 
+		} catch (IllegalArgumentException e) {
+			throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
+			// TODO: handle exception
 		}
 
 	}
 
 	@Override
 	public String toString() {
-		return String.format("color=%s, posicion=%s", color, posicion);
+		return String.format("color=%s, posicion=(%s)", color, posicion);
 	}
 
 }
