@@ -1,6 +1,7 @@
 package org.iesalandalus.programacion.reinaajedrez;
 
 import org.iesalandalus.programacion.reinaajedrez.modelo.Color;
+import org.iesalandalus.programacion.reinaajedrez.modelo.Direccion;
 import org.iesalandalus.programacion.utilidades.Entrada;
 
 public class Consola {
@@ -53,4 +54,32 @@ public class Consola {
 				Pulsa 8 para desplazarte al noroeste
 						""");
 	}
+
+	public static Direccion elegirDireccion() {
+		int numdireccion;
+		do {
+			System.out.println("Selecciona una dirección");
+			numdireccion = Entrada.entero();
+		} while (numdireccion < 1 || numdireccion > 8);
+		switch (numdireccion) {
+		case 1:
+			return Direccion.NORTE;
+		case 2:
+			return Direccion.NORESTE;
+		case 3:
+			return Direccion.ESTE;
+		case 4:
+			return Direccion.SURESTE;
+		case 5:
+			return Direccion.SUR;
+		case 6:
+			return Direccion.SUROESTE;
+		case 7:
+			return Direccion.OESTE;
+		case 8:
+			return Direccion.NOROESTE;
+		}
+		return null;
+	}
+
 }
