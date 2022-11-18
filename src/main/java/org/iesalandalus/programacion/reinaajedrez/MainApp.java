@@ -1,10 +1,14 @@
 package org.iesalandalus.programacion.reinaajedrez;
 
+import javax.naming.OperationNotSupportedException;
+
+import org.iesalandalus.programacion.reinaajedrez.modelo.Color;
+import org.iesalandalus.programacion.reinaajedrez.modelo.Direccion;
 import org.iesalandalus.programacion.reinaajedrez.modelo.Reina;
 import org.iesalandalus.programacion.utilidades.Entrada;
 
 public class MainApp {
-	Reina reina;
+	static Reina reina;
 
 	public static void main(String[] args) {
 		Consola.mostrarMenu();
@@ -32,14 +36,22 @@ public class MainApp {
 	}
 
 	private static void crearReinaDefecto() {
-
+		reina = new Reina();
 	}
 
 	private static void crearReinaColor() {
-
+		Color color = Consola.elegirColor();
+		reina = new Reina(color);
 	}
 
 	private static void mover() {
+		try {
+			Direccion direccion = Consola.elegirDireccion();
+			int numpasos = Consola.elegirPasos();
+			reina.mover(direccion, numpasos);
+		} catch (IllegalArgumentException|OperationNotSupportedException e) {
+			System.out.println(e.getMessage());
+		}
 
 	}
 
