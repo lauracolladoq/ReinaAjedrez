@@ -28,18 +28,18 @@ public class Consola {
 	}
 
 	public static Color elegirColor() {
-		Color color;
+		Color color = null;
 		int numcolor;
 		do {
 			System.out.println("Selecciona un color, 1 para blanco y 2 para negro");
 			numcolor = Entrada.entero();
 		} while (numcolor < 1 || numcolor > 2);
 		if (numcolor == 1) {
-			return Color.BLANCO;
+			color = Color.BLANCO;
 		} else if (numcolor == 2) {
-			return Color.NEGRO;
+			color = Color.NEGRO;
 		}
-		return null;
+		return color;
 	}
 
 	public static void mostrarMenuDirecciones() {
@@ -57,29 +57,38 @@ public class Consola {
 
 	public static Direccion elegirDireccion() {
 		int numdireccion;
+		Direccion direccion = null;
 		do {
 			System.out.println("Selecciona una dirección");
 			numdireccion = Entrada.entero();
 		} while (numdireccion < 1 || numdireccion > 8);
 		switch (numdireccion) {
 		case 1:
-			return Direccion.NORTE;
+			direccion = Direccion.NORTE;
+			break;
 		case 2:
-			return Direccion.NORESTE;
+			direccion = Direccion.NORESTE;
+			break;
 		case 3:
-			return Direccion.ESTE;
+			direccion = Direccion.ESTE;
+			break;
 		case 4:
-			return Direccion.SURESTE;
+			direccion = Direccion.SURESTE;
+			break;
 		case 5:
-			return Direccion.SUR;
+			direccion = Direccion.SUR;
+			break;
 		case 6:
-			return Direccion.SUROESTE;
+			direccion = Direccion.SUROESTE;
+			break;
 		case 7:
-			return Direccion.OESTE;
+			direccion = Direccion.OESTE;
+			break;
 		case 8:
-			return Direccion.NOROESTE;
+			direccion = Direccion.NOROESTE;
+			break;
 		}
-		return null;
+		return direccion;
 	}
 
 	public static int elegirPasos() {
