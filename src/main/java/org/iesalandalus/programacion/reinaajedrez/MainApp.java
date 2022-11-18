@@ -49,14 +49,18 @@ public class MainApp {
 			Direccion direccion = Consola.elegirDireccion();
 			int numpasos = Consola.elegirPasos();
 			reina.mover(direccion, numpasos);
-		} catch (IllegalArgumentException|OperationNotSupportedException e) {
+		} catch (IllegalArgumentException | OperationNotSupportedException e) {
 			System.out.println(e.getMessage());
 		}
 
 	}
 
 	private static void mostrarReina() {
-
+		if (reina == null) {
+			System.out.println("La reina no está creada");
+		} else {
+			reina.toString();
+		}
 	}
 
 }
