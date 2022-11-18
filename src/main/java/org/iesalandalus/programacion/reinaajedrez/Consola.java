@@ -11,11 +11,12 @@ public class Consola {
 
 	public static void mostrarMenu() {
 		System.out.println("""
-				----------------------------------------------------
+				-----------------------------------------------
 				Pulsa 1 para crear la reina por defecto
 				Pulsa 2 para crear la reina eligiendo el color
 				Pulsa 3 para moverte
 				Pulsa 4 para salir
+				-----------------------------------------------
 						""");
 	}
 
@@ -45,6 +46,7 @@ public class Consola {
 
 	public static void mostrarMenuDirecciones() {
 		System.out.println("""
+				-------------------------------------
 				Pulsa 1 para desplazarte al norte
 				Pulsa 2 para desplazarte al noreste
 				Pulsa 3 para desplazarte al este
@@ -53,6 +55,7 @@ public class Consola {
 				Pulsa 6 para desplazarte al suroeste
 				Pulsa 7 para desplazarte al oeste
 				Pulsa 8 para desplazarte al noroeste
+				-------------------------------------
 						""");
 	}
 
@@ -60,7 +63,7 @@ public class Consola {
 		int numdireccion;
 		Direccion direccion = null;
 		do {
-			System.out.print ("Selecciona una dirección");
+			System.out.print("Selecciona una dirección");
 			numdireccion = Entrada.entero();
 		} while (numdireccion < 1 || numdireccion > 8);
 		switch (numdireccion) {
