@@ -11,9 +11,10 @@ public class Consola {
 
 	public static void mostrarMenu() {
 		System.out.println("""
+				----------------------------------------------------
 				Pulsa 1 para crear la reina por defecto
 				Pulsa 2 para crear la reina eligiendo el color
-				Pulsa 3 para mover
+				Pulsa 3 para moverte
 				Pulsa 4 para salir
 						""");
 	}
@@ -21,7 +22,7 @@ public class Consola {
 	public static int elegirOpcionMenu() {
 		int opcion;
 		do {
-			System.out.println("Selecciona una opción del menú");
+			System.out.print("Selecciona una opción del menú");
 			opcion = Entrada.entero();
 		} while (opcion < 1 || opcion > 4);
 		return opcion;
@@ -31,7 +32,7 @@ public class Consola {
 		Color color = null;
 		int numcolor;
 		do {
-			System.out.println("Selecciona un color, 1 para blanco y 2 para negro");
+			System.out.print("Selecciona un color, 1 para blanco y 2 para negro");
 			numcolor = Entrada.entero();
 		} while (numcolor < 1 || numcolor > 2);
 		if (numcolor == 1) {
@@ -59,7 +60,7 @@ public class Consola {
 		int numdireccion;
 		Direccion direccion = null;
 		do {
-			System.out.println("Selecciona una dirección");
+			System.out.print ("Selecciona una dirección");
 			numdireccion = Entrada.entero();
 		} while (numdireccion < 1 || numdireccion > 8);
 		switch (numdireccion) {
@@ -93,7 +94,7 @@ public class Consola {
 
 	public static int elegirPasos() {
 		int numpasos;
-		System.out.println("Selecciona el número de pasos que avanzar");
+		System.out.print("Selecciona el número de pasos que avanzar");
 		numpasos = Entrada.entero();
 		return numpasos;
 	}
