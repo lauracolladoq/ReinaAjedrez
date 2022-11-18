@@ -5,14 +5,18 @@ import javax.naming.OperationNotSupportedException;
 import org.iesalandalus.programacion.reinaajedrez.modelo.Color;
 import org.iesalandalus.programacion.reinaajedrez.modelo.Direccion;
 import org.iesalandalus.programacion.reinaajedrez.modelo.Reina;
-import org.iesalandalus.programacion.utilidades.Entrada;
 
 public class MainApp {
 	static Reina reina;
 
 	public static void main(String[] args) {
-		Consola.mostrarMenu();
-		ejecutarOpcion(Consola.elegirOpcionMenu());
+		int n;
+		do {
+			Consola.mostrarMenu();
+			n = Consola.elegirOpcionMenu();
+			ejecutarOpcion(n);
+		} while (n != 4);
+
 	}
 
 	private static void ejecutarOpcion(int opcion) {
@@ -26,8 +30,13 @@ public class MainApp {
 			mostrarReina();
 			break;
 		case 3:
-			mover();
-			mostrarReina();
+			if (reina == null) {
+				System.out.println("Reina no creada");
+			} else {
+
+				mover();
+				mostrarReina();
+			}
 			break;
 		case 4:
 			Consola.despedirse();
@@ -46,6 +55,7 @@ public class MainApp {
 
 	private static void mover() {
 		try {
+			Consola.mostrarMenuDirecciones();
 			Direccion direccion = Consola.elegirDireccion();
 			int numpasos = Consola.elegirPasos();
 			reina.mover(direccion, numpasos);
@@ -59,7 +69,7 @@ public class MainApp {
 		if (reina == null) {
 			System.out.println("La reina no está creada");
 		} else {
-			reina.toString();
+			System.out.println(reina.toString());
 		}
 	}
 
